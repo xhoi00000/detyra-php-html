@@ -75,6 +75,18 @@
     .result.visible {display:block;animation:fadeIn 0.3s ease-out;}
     @keyframes fadeIn {from{opacity:0;transform:translateY(-10px);}to{opacity:1;transform:translateY(0);}}
 
+    .fun-message {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: #facc15; /* sfond i verdhë */
+      color: #1e293b; /* tekst i errët për kontrast */
+      text-align: center;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
     .disclaimer {margin-top:1rem;text-align:center;color:var(--text-light);font-size:0.8rem;}
   </style>
 </head>
@@ -124,6 +136,7 @@
       <div class="result-title">Rezultati:</div>
       <div class="conversion-value" id="conversion-result">0.00 ALL</div>
       <div class="rate-info" id="rate-info">Kursi i këmbimit: 1 EUR = 0.00 ALL</div>
+      <div class="fun-message">KY PROGRAM U MUNDSUA NGA FILOZOFI XHOI 🎉</div>
     </div>
 
     <div class="disclaimer">
@@ -158,7 +171,6 @@
         HUF: "🇭🇺"
       };
 
-      // Ndrysho flamurin sipas monedhës së zgjedhur
       currencySelect.addEventListener('change', () => {
         flagLeft.textContent = flagMap[currencySelect.value] || "🏳️";
       });
@@ -175,7 +187,6 @@
         }
 
         const result = amount * rate;
-        const formattedAmount = amount.toLocaleString('sq-AL', { minimumFractionDigits: 2 });
         const formattedResult = result.toLocaleString('sq-AL', { minimumFractionDigits: 2 });
         const formattedRate = rate.toLocaleString('sq-AL', { minimumFractionDigits: 2 });
 

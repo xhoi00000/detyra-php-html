@@ -134,6 +134,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .result-title { font-weight: bold; color: var(--primary); }
         .conversion-value { font-size: 1.5rem; font-weight: bold; margin-top: 0.5rem; }
         .rate-info { margin-top: 0.5rem; color: var(--text-light); }
+
+        .fun-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #facc15; /* e verdhë */
+            color: #1e293b; /* tekst i errët për kontrast */
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
         .disclaimer { font-size: 0.8rem; color: var(--text-light); margin-top: 1.5rem; text-align: center; border-top: 1px solid var(--border); padding-top: 1rem; }
     </style>
 </head>
@@ -187,6 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="result-title">Rezultati:</div>
             <div class="conversion-value"><?= htmlspecialchars($result) ?></div>
             <div class="rate-info"><?= htmlspecialchars($rateInfo) ?></div>
+            <div class="fun-message">KY PROGRAM U MUNDSUA NGA FILOZOFI XHOI 🎉</div>
         </div>
     <?php endif; ?>
 
